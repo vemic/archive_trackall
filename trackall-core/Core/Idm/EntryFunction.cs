@@ -15,32 +15,39 @@ namespace Vemic.Trackall.AzureFunctions.Core.Idm
         [FunctionName("function/core/idm/entry")]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            out object document,
+            [CosmosDB("Idm", "Items", Id = "id", ConnectionStringSetting = "MiappCosmosDBConnection")] out object idm,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
+            if(req == null)
+            {
+                idm = null;
+                return new BadRequestResult();
+            }
+
             // getbody.
-            string userid = req.Query["userid"];
-            string name = req.Query["name"];
-            string task = req.Query["task"];
-            string duedate = req.Query["duedate"];
+            IQueryCollection requery = req.Query;
+            string userid = requery["userid"];
+            string name = requery["name"];
+            string task = requery["task"];
+            string duedate = requery["duedate"];
 
             // validate.
             if (string.IsNullOrEmpty(userid) || string.IsNullOrEmpty(task))
             {
-                document = null;
+                idm = null;
                 return new BadRequestResult();
             }
 
-            document = new
+            idm = new
             {
                 name,
                 duedate,
                 task
             };
 
-            return new OkObjectResult(document);
+            return new OkObjectResult(idm);
         }
     }
 }

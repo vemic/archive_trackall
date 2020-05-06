@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Vemic.Trackall.AzureFunctions.Core.Idm
 {
-    public class Idm
+    public class IdmInfo
     {
         /// <summary>
         /// ユーザを識別するIDです。
