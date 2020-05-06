@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
-    <RootNamespace>Vemic.Trackall</RootNamespace>
+    <RootNamespace>Vemic.Trackall.AzureFunctions</RootNamespace>
     <Authors>vemic</Authors>
     <Company>vemic</Company>
     <UserSecretsId>0f588cb7-1338-4e35-94d7-797921c1b90c</UserSecretsId>
@@ -12,6 +12,10 @@
     <PackageReference Include="Azure.Storage.Files.Shares" Version="12.0.0-preview.5" />
     <PackageReference Include="Azure.Storage.Queues" Version="12.0.0" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.8.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Azure" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.0.0" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
