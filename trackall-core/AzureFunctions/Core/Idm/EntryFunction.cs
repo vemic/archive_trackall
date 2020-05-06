@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Vemic.Trackall.Function.Core.Idm
+namespace Vemic.Trackall.AzureFunctions.Core.Idm
 {
     public static class EntryFunction
     {
