@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "trackall-core", "trackall-core\trackall-core.csproj", "{29B6EF1A-552A-42DE-BD65-EEA2DB3C82C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vemic.Trackall", "trackall-core\Vemic.Trackall.csproj", "{29B6EF1A-552A-42DE-BD65-EEA2DB3C82C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
