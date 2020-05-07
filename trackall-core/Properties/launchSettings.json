@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Vemic.Trackall.AzureFunctions": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
