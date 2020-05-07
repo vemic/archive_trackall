@@ -12,10 +12,10 @@ namespace Vemic.Trackall.AzureFunctions.Core.Idm
 {
     public static class EntryFunction
     {
-        [FunctionName("function/core/idm/entry")]
+        [FunctionName("FunctionEntryIdm")]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            [CosmosDB("Idm", "Items", Id = "id", ConnectionStringSetting = "MiappCosmosDBConnection")] out object idm,
+            [CosmosDB("Idm", "Items", Id = "id", ConnectionStringSetting = "MiappCosmosDBConnection", CreateIfNotExists = true)] out object idm,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -42,9 +42,10 @@ namespace Vemic.Trackall.AzureFunctions.Core.Idm
 
             idm = new
             {
+                userid,
                 name,
-                duedate,
-                task
+                task,
+                duedate
             };
 
             return new OkObjectResult(idm);
